@@ -66,28 +66,20 @@
             margin-bottom: 20px;
             gap: 10px;
         }
-        .image-container img {
+        .image-container img, video {
             width: 40%;
             height: auto;
             border: 2px solid #fff;
             border-radius: 8px;
             transition: transform 0.3s ease-in-out;
         }
-        .image-container img:hover {
+        .image-container img:hover, video:hover {
             transform: scale(1.05);
         }
-        .video-container {
-            margin: 20px 0;
-            border: 3px solid #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            max-width: 100%;
-            height: 350px; /* Slightly larger */
-        }
         video {
-            width: 100%;
-            height: 100%;
-            display: block;
+            display: inline-block;
+            margin-top: 10px;
+            outline: none;
         }
         .description {
             font-size: 0.9rem;
@@ -98,9 +90,6 @@
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 8px;
             text-align: justify;
-        }
-        .video-container video {
-            pointer-events: none;
         }
     </style>
 </head>
@@ -118,12 +107,10 @@
         </div>
 
         <!-- Video Section -->
-        <div class="video-container">
-            <video autoplay loop muted>
-                <source src="video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <video autoplay loop muted>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
         <!-- Description Section -->
         <div class="description">
