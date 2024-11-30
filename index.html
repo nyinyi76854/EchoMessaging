@@ -11,12 +11,17 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #4facfe, #00f2fe);
             color: #fff;
-            overflow-y: scroll;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+            box-sizing: border-box;
         }
         .container {
             text-align: center;
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 1200px;
+            width: 100%;
             padding: 20px;
         }
         .logo {
@@ -46,76 +51,79 @@
             font-size: 1.2rem;
             font-style: italic;
             color: #e0f7fa;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         .title:hover {
             color: #ffeb3b;
             transition: color 0.3s ease-in-out;
         }
-        .media-section {
+        .image-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
         }
-        .media-section img {
-            width: 300px;
-            height: 200px;
-            border: 3px solid #fff;
+        .image-container img {
+            width: 45%;
+            height: auto;
+            border: 5px solid #fff;
             border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease-in-out;
         }
-        .media-section img:hover {
+        .image-container img:hover {
             transform: scale(1.05);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .video-container {
+            margin: 20px 0;
+            border: 5px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
         }
         video {
             width: 100%;
-            max-width: 800px;
-            margin: 40px 0;
-            border: 3px solid #fff;
-            border-radius: 10px;
-            background: #000;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        video:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            height: auto;
+            display: block;
         }
         .description {
-            font-size: 1rem;
-            color: #f0f8ff;
+            font-size: 1.2rem;
             line-height: 1.6;
-            margin-top: 20px;
+            color: #e0f7fa;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
             text-align: justify;
+        }
+        .video-container video {
+            pointer-events: none; /* Disable controls */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Logo -->
+        <!-- Logo Section -->
         <img src="echologo.png" alt="Echo Logo" class="logo">
-        <!-- Title -->
         <div class="title">Echo Messaging App.....</div>
-        <!-- Subtitle -->
         <div class="subtitle">Start messaging with a new messaging app...</div>
-        
-        <!-- Video -->
-        <video autoplay muted loop>
-            <source src="video.mp4" type="video/mp4">
-        </video>
 
-        <!-- Images -->
-        <div class="media-section">
+        <!-- Images Section -->
+        <div class="image-container">
             <img src="main_interface.jpg" alt="Main Interface">
             <img src="chat_interface.jpg" alt="Chat Interface">
         </div>
 
-        <!-- Description -->
+        <!-- Video Section -->
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Description Section -->
         <div class="description">
-            This is an Echo Messaging App. In this app, every message is exchanged in real time. No conflict and no delay. 
-            You can also send media messages like videos and images. If you are a company, you can request a verification bridge. 
-            This requires a government registration ID as a key requirement!
+            <p>This is an Echo Messaging App. In this app, every message is being exchanged in real-time. No conflict and no delay. You can send media messages like videos and images as well. And if you are a company, you can request for a verification bridge. This requires a government registration ID as a key requirement!</p>
         </div>
     </div>
 </body>
