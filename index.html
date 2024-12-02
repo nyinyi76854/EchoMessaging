@@ -27,7 +27,29 @@
             background: rgba(0, 0, 0, 0.7); /* Semi-transparent container background */
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Elegant shadow */
-            position: relative; /* For positioning the Android icon */
+            position: relative; /* For positioning icons */
+        }
+        .top-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 30px;
+            color: #00ffff; /* Light blue for the window icon */
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+        .icon:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.4);
         }
         .android-icon {
             position: absolute;
@@ -120,6 +142,13 @@
 </head>
 <body>
     <div class="container">
+        <!-- Top Icons -->
+        <div class="top-icons">
+            <a href="https://drive.google.com/uc?export=download&id=1R1ETvoTfKSVq2FYIl9z98yQoMTxj9hB-" class="icon" title="Window Icon">
+                <i class="fas fa-window-maximize"></i>
+            </a>
+        </div>
+
         <!-- Android Icon -->
         <a href="https://drive.google.com/uc?export=download&id=1S_HGvCg_ZQYr1Z0DJJI8OOuRYVvmqwAY" class="android-icon" title="Download for Android">
             <i class="fab fa-android"></i>
